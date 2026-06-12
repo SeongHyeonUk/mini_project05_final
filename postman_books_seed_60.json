@@ -1,0 +1,402 @@
+{
+  "info": {
+    "name": "Books Seed — 추가 60권 + 리뷰",
+    "_postman_id": "books-seed-60-extra",
+    "description": "POST /books 60권 추가 시드 데이터 + 리뷰 데이터\n\n⚠️  1단계: '📚 새 도서 60권' 폴더를 먼저 Runner로 전부 실행하세요.\n⚠️  2단계: 리뷰의 bookId는 기존 40권 이후 순서(41~100)를 가정합니다.\n    DB를 초기화했거나 삭제한 책이 있다면 bookId를 실제 ID로 수정하세요.\n⚠️  userId는 본인 계정 ID로 변경하세요 (현재 1로 설정).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "📚 새 도서 60권",
+      "item": [
+        {
+          "name": "41. 82년생 김지영",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"82년생 김지영\",\n  \"author\": \"조남주\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"2016-10-14\",\n  \"pageCount\": 190,\n  \"description\": \"1982년생 평범한 여성 김지영의 삶을 통해 한국 사회의 성차별 구조를 담담하게 고발한 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"공감되는\", \"먹먹한\", \"강렬한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "42. 구의 증명",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"구의 증명\",\n  \"author\": \"최진영\",\n  \"genre\": \"소설\",\n  \"publisher\": \"은행나무\",\n  \"publishedDate\": \"2015-09-10\",\n  \"pageCount\": 228,\n  \"description\": \"죽은 자와 산 자의 경계에서 펼쳐지는 사랑 이야기. 상실과 애도를 아름다운 문체로 그린 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"감성적인\", \"먹먹한\", \"아름다운\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "43. 해변의 카프카",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"해변의 카프카\",\n  \"author\": \"무라카미 하루키\",\n  \"genre\": \"소설\",\n  \"publisher\": \"문학사상\",\n  \"publishedDate\": \"2005-01-10\",\n  \"pageCount\": 760,\n  \"description\": \"15세 소년 카프카와 노인 나카타의 이중 서사. 그리스 신화, 음악, 운명을 엮은 하루키 최대 걸작.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"독특한\", \"아름다운\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "44. 소년이 온다",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"소년이 온다\",\n  \"author\": \"한강\",\n  \"genre\": \"소설\",\n  \"publisher\": \"창비\",\n  \"publishedDate\": \"2014-05-19\",\n  \"pageCount\": 216,\n  \"description\": \"1980년 5월 광주를 살아낸 사람들의 이야기. 폭력과 인간의 존엄을 정면으로 마주한 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"먹먹한\", \"잊히지 않는\", \"어두운\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "45. 모순",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"모순\",\n  \"author\": \"양귀자\",\n  \"genre\": \"소설\",\n  \"publisher\": \"쓰다\",\n  \"publishedDate\": \"2013-07-05\",\n  \"pageCount\": 352,\n  \"description\": \"세 남자를 동시에 사랑하는 여자의 이야기. 욕망과 삶의 모순을 날카롭게 해부한 베스트셀러 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"중독적인\", \"강렬한\", \"공감되는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "46. 오만과 편견",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"오만과 편견\",\n  \"author\": \"제인 오스틴\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"2003-09-30\",\n  \"pageCount\": 512,\n  \"description\": \"19세기 영국 시골 마을을 배경으로 엘리자베스와 다아시의 사랑을 그린 낭만주의 고전.\",\n  \"userId\": 1,\n  \"moods\": [\"설레는\", \"매력적인\", \"쉽게 읽히는\", \"아름다운\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "47. 위대한 개츠비",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"위대한 개츠비\",\n  \"author\": \"F. 스콧 피츠제럴드\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"2009-06-30\",\n  \"pageCount\": 232,\n  \"description\": \"1920년대 미국 재즈 시대를 배경으로 한 사랑, 꿈, 몰락의 이야기. 아메리칸 드림의 허상을 그렸다.\",\n  \"userId\": 1,\n  \"moods\": [\"아름다운\", \"먹먹한\", \"잊히지 않는\", \"감성적인\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "48. 변신",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"변신\",\n  \"author\": \"프란츠 카프카\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"1998-01-01\",\n  \"pageCount\": 128,\n  \"description\": \"어느 날 아침 벌레로 변한 그레고르 잠자의 이야기. 소외와 존재의 부조리를 그린 현대문학의 상징.\",\n  \"userId\": 1,\n  \"moods\": [\"독특한\", \"어두운\", \"강렬한\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "49. 참을 수 없는 존재의 가벼움",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"참을 수 없는 존재의 가벼움\",\n  \"author\": \"밀란 쿤데라\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"2009-04-30\",\n  \"pageCount\": 416,\n  \"description\": \"1968년 프라하의 봄을 배경으로 사랑과 자유, 존재의 의미를 탐구하는 철학적 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"독특한\", \"감성적인\", \"잊히지 않는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "50. 나미야 잡화점의 기적",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"나미야 잡화점의 기적\",\n  \"author\": \"히가시노 게이고\",\n  \"genre\": \"소설\",\n  \"publisher\": \"현대문학\",\n  \"publishedDate\": \"2012-10-15\",\n  \"pageCount\": 432,\n  \"description\": \"시간을 초월한 편지로 연결되는 사람들의 이야기. 따뜻한 위로와 감동이 가득한 힐링 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"감성적인\", \"쉽게 읽히는\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "51. 도가니",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"도가니\",\n  \"author\": \"공지영\",\n  \"genre\": \"소설\",\n  \"publisher\": \"창비\",\n  \"publishedDate\": \"2009-07-06\",\n  \"pageCount\": 324,\n  \"description\": \"청각장애인 학교의 실제 성폭력 사건을 고발한 소설. 사회적 각성을 불러일으킨 작품.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"어두운\", \"먹먹한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "52. 이방인",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"이방인\",\n  \"author\": \"알베르 카뮈\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"2011-04-30\",\n  \"pageCount\": 160,\n  \"description\": \"부조리한 세계 속에서 감정이 없는 듯 살아가는 뫼르소의 이야기. 실존주의 문학의 상징.\",\n  \"userId\": 1,\n  \"moods\": [\"독특한\", \"강렬한\", \"의미 있는\", \"어두운\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "53. 연금술사",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"연금술사\",\n  \"author\": \"파울로 코엘료\",\n  \"genre\": \"소설\",\n  \"publisher\": \"문학동네\",\n  \"publishedDate\": \"2001-09-15\",\n  \"pageCount\": 256,\n  \"description\": \"자신의 전설을 찾아 사막을 횡단하는 양치기 소년 산티아고의 여정. 전 세계 6500만 부 돌파.\",\n  \"userId\": 1,\n  \"moods\": [\"의미 있는\", \"아름다운\", \"설레는\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "54. 동물농장",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"동물농장\",\n  \"author\": \"조지 오웰\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"1998-08-01\",\n  \"pageCount\": 160,\n  \"description\": \"농장 동물들의 혁명을 통해 전체주의와 권력 부패를 날카롭게 풍자한 우화.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"독특한\", \"의미 있는\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "55. 태백산맥 1",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"태백산맥 1\",\n  \"author\": \"조정래\",\n  \"genre\": \"소설\",\n  \"publisher\": \"해냄\",\n  \"publishedDate\": \"2007-07-30\",\n  \"pageCount\": 368,\n  \"description\": \"해방 이후 여순반란사건부터 한국전쟁까지를 배경으로 한 민족 분단의 대하소설.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"강렬한\", \"먹먹한\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "56. 아프니까 청춘이다",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"아프니까 청춘이다\",\n  \"author\": \"김난도\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"쌤앤파커스\",\n  \"publishedDate\": \"2010-12-13\",\n  \"pageCount\": 288,\n  \"description\": \"20~30대 청춘에게 보내는 따뜻한 위로와 삶의 지혜. 국내 200만 부 이상 판매.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"공감되는\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "57. 당신이 옳다",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"당신이 옳다\",\n  \"author\": \"정혜신\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"해냄\",\n  \"publishedDate\": \"2018-03-15\",\n  \"pageCount\": 296,\n  \"description\": \"정신건강의학과 전문의가 전하는 공감과 치유의 언어. '당신 옆에 있겠다'는 메시지.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"공감되는\", \"의미 있는\", \"솔직한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "58. 지적 대화를 위한 넓고 얕은 지식 0",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"지적 대화를 위한 넓고 얕은 지식 0\",\n  \"author\": \"채사장\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"웨일북\",\n  \"publishedDate\": \"2019-04-08\",\n  \"pageCount\": 364,\n  \"description\": \"현실 너머의 세계, 철학·과학·예술·종교를 넓게 아우르는 교양 입문서.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"쉽게 읽히는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "59. 언어의 온도",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"언어의 온도\",\n  \"author\": \"이기주\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"말글터\",\n  \"publishedDate\": \"2016-08-31\",\n  \"pageCount\": 228,\n  \"description\": \"말과 글이 가진 온기와 힘에 대한 사색. 삶의 결을 부드럽게 어루만지는 에세이.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"감성적인\", \"쉽게 읽히는\", \"아름다운\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "60. 무례한 사람에게 웃어주지 않아도 됩니다",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"무례한 사람에게 웃어주지 않아도 됩니다\",\n  \"author\": \"정문정\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"가나출판사\",\n  \"publishedDate\": \"2018-05-28\",\n  \"pageCount\": 232,\n  \"description\": \"관계와 경계에 대한 솔직한 이야기. 감정 소비 없이 자기를 지키는 방법을 전한다.\",\n  \"userId\": 1,\n  \"moods\": [\"공감되는\", \"솔직한\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "61. 오늘도 무사히",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"오늘도 무사히\",\n  \"author\": \"김지수\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"21세기북스\",\n  \"publishedDate\": \"2020-06-15\",\n  \"pageCount\": 264,\n  \"description\": \"일상의 작은 것들에서 위로와 힘을 찾는 에세이. 지친 하루를 위한 따뜻한 글모음.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"공감되는\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "62. 나의 문화유산답사기 1",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"나의 문화유산답사기 1\",\n  \"author\": \"유홍준\",\n  \"genre\": \"에세이\",\n  \"publisher\": \"창비\",\n  \"publishedDate\": \"1993-05-01\",\n  \"pageCount\": 360,\n  \"description\": \"'아는 만큼 보인다.' 우리 국토와 문화유산을 깊고 감동적으로 풀어낸 기행 에세이 1편.\",\n  \"userId\": 1,\n  \"moods\": [\"의미 있는\", \"아름다운\", \"쉽게 읽히는\", \"감성적인\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "63. 린 스타트업",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"린 스타트업\",\n  \"author\": \"에릭 리스\",\n  \"genre\": \"경제·경영\",\n  \"publisher\": \"인사이트\",\n  \"publishedDate\": \"2012-07-05\",\n  \"pageCount\": 380,\n  \"description\": \"빠른 실험과 검증으로 혁신하는 스타트업 방법론. 실리콘밸리 창업 교과서.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"의미 있는\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "64. 생각에 관한 생각",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"생각에 관한 생각\",\n  \"author\": \"대니얼 카너먼\",\n  \"genre\": \"경제·경영\",\n  \"publisher\": \"김영사\",\n  \"publishedDate\": \"2012-03-14\",\n  \"pageCount\": 560,\n  \"description\": \"노벨 경제학상 수상자가 밝히는 인간 사고의 두 시스템. 행동경제학의 바이블.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"독특한\", \"의미 있는\", \"강렬한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "65. 설득의 심리학",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"설득의 심리학\",\n  \"author\": \"로버트 치알디니\",\n  \"genre\": \"경제·경영\",\n  \"publisher\": \"21세기북스\",\n  \"publishedDate\": \"2013-09-25\",\n  \"pageCount\": 440,\n  \"description\": \"상호성, 희귀성, 권위 등 사람의 마음을 움직이는 6가지 설득 법칙을 과학적으로 분석.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"몰입되는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "66. 부자 아빠 가난한 아빠",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"부자 아빠 가난한 아빠\",\n  \"author\": \"로버트 기요사키\",\n  \"genre\": \"경제·경영\",\n  \"publisher\": \"민음인\",\n  \"publishedDate\": \"2018-03-20\",\n  \"pageCount\": 336,\n  \"description\": \"두 아버지의 돈에 대한 서로 다른 관점을 통해 재정 독립의 길을 제시한 자기계발 고전.\",\n  \"userId\": 1,\n  \"moods\": [\"쉽게 읽히는\", \"의미 있는\", \"신선한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "67. 습관의 힘",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"습관의 힘\",\n  \"author\": \"찰스 두히그\",\n  \"genre\": \"경제·경영\",\n  \"publisher\": \"갤리온\",\n  \"publishedDate\": \"2012-09-03\",\n  \"pageCount\": 428,\n  \"description\": \"습관이 어떻게 형성되고 변화될 수 있는지를 과학적으로 규명한 뉴욕타임스 베스트셀러.\",\n  \"userId\": 1,\n  \"moods\": [\"쉽게 읽히는\", \"공감되는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "68. 나쁜 사마리아인들",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"나쁜 사마리아인들\",\n  \"author\": \"장하준\",\n  \"genre\": \"경제·경영\",\n  \"publisher\": \"부키\",\n  \"publishedDate\": \"2007-11-12\",\n  \"pageCount\": 352,\n  \"description\": \"부자 나라들의 위선적 경제 논리를 해부하고 개발도상국을 위한 대안적 경제 시각을 제시.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"신선한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "69. 로마인 이야기 1",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"로마인 이야기 1\",\n  \"author\": \"시오노 나나미\",\n  \"genre\": \"역사\",\n  \"publisher\": \"한길사\",\n  \"publishedDate\": \"1995-10-16\",\n  \"pageCount\": 320,\n  \"description\": \"로마 건국부터 카르타고 전쟁까지. 로마가 어떻게 세계를 정복했는지를 담아낸 대하역사서 1권.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"강렬한\", \"의미 있는\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "70. 호모 데우스",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"호모 데우스\",\n  \"author\": \"유발 하라리\",\n  \"genre\": \"역사\",\n  \"publisher\": \"김영사\",\n  \"publishedDate\": \"2017-05-22\",\n  \"pageCount\": 584,\n  \"description\": \"인류의 미래를 예측한 사피엔스의 후속작. AI와 생명공학이 지배할 미래 사회를 탐구.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"강렬한\", \"몰입되는\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "71. 21세기를 위한 21가지 제언",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"21세기를 위한 21가지 제언\",\n  \"author\": \"유발 하라리\",\n  \"genre\": \"역사\",\n  \"publisher\": \"김영사\",\n  \"publishedDate\": \"2018-10-08\",\n  \"pageCount\": 480,\n  \"description\": \"테러리즘, 자유주의, 빅데이터 등 현재 인류가 직면한 21가지 핵심 질문에 대한 분석.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"신선한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "72. 문명의 충돌",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"문명의 충돌\",\n  \"author\": \"새뮤얼 헌팅턴\",\n  \"genre\": \"역사\",\n  \"publisher\": \"김영사\",\n  \"publishedDate\": \"2016-12-12\",\n  \"pageCount\": 592,\n  \"description\": \"냉전 이후 세계를 이슬람·서구·중화 문명의 충돌 구도로 분석한 국제정치학 필독서.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"신선한\", \"독특한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "73. 조선왕조 오백년",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"조선왕조 오백년\",\n  \"author\": \"박영규\",\n  \"genre\": \"역사\",\n  \"publisher\": \"웅진지식하우스\",\n  \"publishedDate\": \"2004-09-01\",\n  \"pageCount\": 496,\n  \"description\": \"태조 이성계부터 순종까지 조선 27대 왕의 삶과 역사를 한 권으로 정리한 역사서.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"의미 있는\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "74. 엔트로피",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"엔트로피\",\n  \"author\": \"제러미 리프킨\",\n  \"genre\": \"과학\",\n  \"publisher\": \"세종연구원\",\n  \"publishedDate\": \"2000-03-20\",\n  \"pageCount\": 348,\n  \"description\": \"열역학 제2법칙인 엔트로피로 현대 문명의 위기를 진단하고 에너지 문제를 탐구.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"독특한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "75. 페르마의 마지막 정리",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"페르마의 마지막 정리\",\n  \"author\": \"사이먼 싱\",\n  \"genre\": \"과학\",\n  \"publisher\": \"영림카디널\",\n  \"publishedDate\": \"1998-09-01\",\n  \"pageCount\": 424,\n  \"description\": \"350년 동안 미해결 수학 난제의 드라마틱한 증명 과정. 수학을 소설처럼 읽게 만드는 책.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"신선한\", \"강렬한\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "76. 파인만의 여섯 가지 물리 이야기",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"파인만의 여섯 가지 물리 이야기\",\n  \"author\": \"리처드 파인만\",\n  \"genre\": \"과학\",\n  \"publisher\": \"승산\",\n  \"publishedDate\": \"2003-04-30\",\n  \"pageCount\": 200,\n  \"description\": \"물리학의 정수 여섯 가지를 세계 최고의 물리학자가 누구나 이해할 수 있게 설명한 명강의.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"쉽게 읽히는\", \"독특한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "77. 운동의 뇌과학",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"운동의 뇌과학\",\n  \"author\": \"웬디 수잔 존버그\",\n  \"genre\": \"과학\",\n  \"publisher\": \"현대지성\",\n  \"publishedDate\": \"2021-07-12\",\n  \"pageCount\": 360,\n  \"description\": \"운동이 뇌와 정신 건강에 미치는 과학적 효과를 밝힌 뇌과학 연구서.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"쉽게 읽히는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "78. 수학의 쓸모",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"수학의 쓸모\",\n  \"author\": \"닉 폴슨\",\n  \"genre\": \"과학\",\n  \"publisher\": \"더퀘스트\",\n  \"publishedDate\": \"2020-08-03\",\n  \"pageCount\": 328,\n  \"description\": \"AI, 의료, 금융 등 현실 세계에서 수학이 어떻게 쓰이는지를 흥미롭게 풀어낸 교양 과학서.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"쉽게 읽히는\", \"독특한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "79. 국가",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"국가\",\n  \"author\": \"플라톤\",\n  \"genre\": \"철학·종교\",\n  \"publisher\": \"서광사\",\n  \"publishedDate\": \"2005-07-30\",\n  \"pageCount\": 560,\n  \"description\": \"이상적인 국가와 정의, 교육에 대한 플라톤의 사상을 담은 서양 철학의 근본 텍스트.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"의미 있는\", \"독특한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "80. 군주론",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"군주론\",\n  \"author\": \"니콜로 마키아벨리\",\n  \"genre\": \"철학·종교\",\n  \"publisher\": \"까치\",\n  \"publishedDate\": \"2008-09-30\",\n  \"pageCount\": 192,\n  \"description\": \"권력의 획득과 유지에 대한 냉철한 분석. 현실 정치의 바이블이자 가장 논쟁적인 고전.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"독특한\", \"신선한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "81. 논어",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"논어\",\n  \"author\": \"공자\",\n  \"genre\": \"철학·종교\",\n  \"publisher\": \"현암사\",\n  \"publishedDate\": \"2009-03-30\",\n  \"pageCount\": 376,\n  \"description\": \"공자와 제자들의 대화를 담은 유교 사상의 핵심. 인·의·예를 중심으로 한 동양 철학의 원류.\",\n  \"userId\": 1,\n  \"moods\": [\"의미 있는\", \"독특한\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "82. 불안",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"불안\",\n  \"author\": \"알랭 드 보통\",\n  \"genre\": \"철학·종교\",\n  \"publisher\": \"이레\",\n  \"publishedDate\": \"2011-09-30\",\n  \"pageCount\": 344,\n  \"description\": \"현대인의 불안의 근원을 철학·예술·종교적 시각으로 탐구하고 치유의 방향을 제시.\",\n  \"userId\": 1,\n  \"moods\": [\"공감되는\", \"감성적인\", \"의미 있는\", \"아름다운\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "83. 철학은 어떻게 삶의 무기가 되는가",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"철학은 어떻게 삶의 무기가 되는가\",\n  \"author\": \"야마구치 슈\",\n  \"genre\": \"철학·종교\",\n  \"publisher\": \"다산초당\",\n  \"publishedDate\": \"2019-05-20\",\n  \"pageCount\": 376,\n  \"description\": \"50개의 철학 개념을 비즈니스와 일상에 적용하는 방법을 알려주는 실용 철학서.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"쉽게 읽히는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "84. 21세기 자본",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"21세기 자본\",\n  \"author\": \"토마 피케티\",\n  \"genre\": \"사회과학\",\n  \"publisher\": \"글항아리\",\n  \"publishedDate\": \"2014-09-12\",\n  \"pageCount\": 944,\n  \"description\": \"300년의 데이터로 분석한 불평등의 역사. 세습 자본주의가 심화되는 현실을 수치로 증명.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"의미 있는\", \"신선한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "85. 사회계약론",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"사회계약론\",\n  \"author\": \"장자크 루소\",\n  \"genre\": \"사회과학\",\n  \"publisher\": \"펭귄클래식코리아\",\n  \"publishedDate\": \"2010-06-30\",\n  \"pageCount\": 256,\n  \"description\": \"인민 주권과 일반 의지 개념으로 민주주의의 사상적 토대를 세운 계몽주의 정치 철학서.\",\n  \"userId\": 1,\n  \"moods\": [\"의미 있는\", \"강렬한\", \"독특한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "86. 팩트풀니스",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"팩트풀니스\",\n  \"author\": \"한스 로슬링\",\n  \"genre\": \"사회과학\",\n  \"publisher\": \"김영사\",\n  \"publishedDate\": \"2019-03-11\",\n  \"pageCount\": 368,\n  \"description\": \"세상에 대한 잘못된 편견과 무지를 데이터로 교정하는 책. 빌 게이츠 강력 추천.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"쉽게 읽히는\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "87. 우리는 차별에 찬성합니다",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"우리는 차별에 찬성합니다\",\n  \"author\": \"오찬호\",\n  \"genre\": \"사회과학\",\n  \"publisher\": \"개마고원\",\n  \"publishedDate\": \"2013-12-26\",\n  \"pageCount\": 256,\n  \"description\": \"20대가 능력주의와 차별을 내면화하는 과정을 사회학적으로 분석한 대담한 책.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"공감되는\", \"의미 있는\", \"솔직한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "88. 나는 가해자의 엄마입니다",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"나는 가해자의 엄마입니다\",\n  \"author\": \"수 클리볼드\",\n  \"genre\": \"사회과학\",\n  \"publisher\": \"반비\",\n  \"publishedDate\": \"2016-08-05\",\n  \"pageCount\": 376,\n  \"description\": \"콜럼바인 총기 사건 가해자 어머니의 15년간의 고백. 비극을 예방하기 위한 경고와 성찰.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"먹먹한\", \"의미 있는\", \"솔직한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "89. 나의 라임오렌지나무",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"나의 라임오렌지나무\",\n  \"author\": \"J.M. 바스콘셀로스\",\n  \"genre\": \"청소년 문학\",\n  \"publisher\": \"동녘\",\n  \"publishedDate\": \"2003-05-01\",\n  \"pageCount\": 280,\n  \"description\": \"브라질 소년 제제의 가난하지만 풍부한 상상력으로 가득 찬 성장기. 어른을 위한 동화.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"먹먹한\", \"감성적인\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "90. 해리 포터와 마법사의 돌",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"해리 포터와 마법사의 돌\",\n  \"author\": \"J.K. 롤링\",\n  \"genre\": \"청소년 문학\",\n  \"publisher\": \"문학수첩\",\n  \"publishedDate\": \"1999-11-01\",\n  \"pageCount\": 424,\n  \"description\": \"호그와트 마법 학교의 소년 마법사 해리 포터의 첫 번째 모험. 전 세계 5억 부 판매 시리즈.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"설레는\", \"쉽게 읽히는\", \"매력적인\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "91. 소공녀",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"소공녀\",\n  \"author\": \"프랜시스 호지슨 버넷\",\n  \"genre\": \"청소년 문학\",\n  \"publisher\": \"비룡소\",\n  \"publishedDate\": \"2009-07-15\",\n  \"pageCount\": 288,\n  \"description\": \"부유한 아버지를 잃고 하녀로 전락한 소녀 세라가 품위와 상상력으로 역경을 이겨내는 이야기.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"설레는\", \"아름다운\", \"잊히지 않는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "92. 프로그래머의 뇌",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"프로그래머의 뇌\",\n  \"author\": \"펠리너 헤르만스\",\n  \"genre\": \"컴퓨터·IT\",\n  \"publisher\": \"제이펍\",\n  \"publishedDate\": \"2022-08-10\",\n  \"pageCount\": 312,\n  \"description\": \"인지과학과 심리학을 바탕으로 개발자가 더 빠르게 코드를 읽고 이해하는 방법을 설명.\",\n  \"userId\": 1,\n  \"moods\": [\"신선한\", \"의미 있는\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "93. 소프트웨어 장인",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"소프트웨어 장인\",\n  \"author\": \"산드로 만쿠소\",\n  \"genre\": \"컴퓨터·IT\",\n  \"publisher\": \"길벗\",\n  \"publishedDate\": \"2015-08-28\",\n  \"pageCount\": 328,\n  \"description\": \"단순한 코더를 넘어 진정한 소프트웨어 장인이 되기 위한 직업 의식과 실천 방법.\",\n  \"userId\": 1,\n  \"moods\": [\"의미 있는\", \"공감되는\", \"신선한\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "94. 실용주의 프로그래머",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"실용주의 프로그래머\",\n  \"author\": \"앤드루 헌트\",\n  \"genre\": \"컴퓨터·IT\",\n  \"publisher\": \"인사이트\",\n  \"publishedDate\": \"2022-09-05\",\n  \"pageCount\": 488,\n  \"description\": \"좋은 개발자가 되기 위한 철학과 실전 조언. 개발자라면 반드시 읽어야 할 커리어 바이블.\",\n  \"userId\": 1,\n  \"moods\": [\"의미 있는\", \"신선한\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "95. 문학이란 무엇인가",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"문학이란 무엇인가\",\n  \"author\": \"장폴 사르트르\",\n  \"genre\": \"문학 비평\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"1998-11-30\",\n  \"pageCount\": 332,\n  \"description\": \"문학의 사회적 기능과 작가의 참여를 역설한 사르트르의 문학론. 앙가주망 개념의 원전.\",\n  \"userId\": 1,\n  \"moods\": [\"강렬한\", \"독특한\", \"의미 있는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "96. 글쓰기의 최전선",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"글쓰기의 최전선\",\n  \"author\": \"은유\",\n  \"genre\": \"문학 비평\",\n  \"publisher\": \"메멘토\",\n  \"publishedDate\": \"2015-09-30\",\n  \"pageCount\": 236,\n  \"description\": \"쓴다는 것의 의미와 글쓰기의 윤리를 탐구하는 에세이이자 문학 비평서.\",\n  \"userId\": 1,\n  \"moods\": [\"솔직한\", \"의미 있는\", \"감성적인\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "97. 미생 1",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"미생 1\",\n  \"author\": \"윤태호\",\n  \"genre\": \"만화·그래픽노블\",\n  \"publisher\": \"위즈덤하우스\",\n  \"publishedDate\": \"2012-11-20\",\n  \"pageCount\": 308,\n  \"description\": \"바둑 기사의 꿈을 접고 대기업 인턴으로 사회에 뛰어든 장그래의 생존기. 현실 직장 드라마.\",\n  \"userId\": 1,\n  \"moods\": [\"공감되는\", \"몰입되는\", \"먹먹한\", \"중독적인\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "98. 슬램덩크 완전판 1",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"슬램덩크 완전판 1\",\n  \"author\": \"이노우에 다케히코\",\n  \"genre\": \"만화·그래픽노블\",\n  \"publisher\": \"대원씨아이\",\n  \"publishedDate\": \"2008-06-25\",\n  \"pageCount\": 288,\n  \"description\": \"농구 천재로 성장하는 강백호와 북산고의 전국 제패 도전기. 스포츠 만화의 전설.\",\n  \"userId\": 1,\n  \"moods\": [\"몰입되는\", \"강렬한\", \"설레는\", \"중독적인\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "99. 보건교사 안은영",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"보건교사 안은영\",\n  \"author\": \"정세랑\",\n  \"genre\": \"소설\",\n  \"publisher\": \"민음사\",\n  \"publishedDate\": \"2015-09-17\",\n  \"pageCount\": 296,\n  \"description\": \"귀신을 보는 보건교사와 한문교사의 학교 귀신 퇴치 이야기. 독창적인 세계관과 유머가 넘치는 소설.\",\n  \"userId\": 1,\n  \"moods\": [\"독특한\", \"신선한\", \"매력적인\", \"쉽게 읽히는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        },
+        {
+          "name": "100. 피프티 피플",
+          "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"title\": \"피프티 피플\",\n  \"author\": \"정세랑\",\n  \"genre\": \"소설\",\n  \"publisher\": \"창비\",\n  \"publishedDate\": \"2016-11-18\",\n  \"pageCount\": 324,\n  \"description\": \"한 대학병원을 중심으로 50명의 삶이 교차하는 연작소설. 따뜻하고 세밀한 인물 묘사가 빛난다.\",\n  \"userId\": 1,\n  \"moods\": [\"따뜻한\", \"감성적인\", \"쉽게 읽히는\", \"공감되는\"]\n}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "http://localhost:8080/books", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["books"] } }
+        }
+      ]
+    },
+    {
+      "name": "⭐ 리뷰 데이터",
+      "item": [
+        { "name": "리뷰 — 82년생 김지영 (bookId:41)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 41,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"읽는 내내 공감되고 먹먹했어요. 주변 모든 여성의 이야기 같았습니다.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-05-10\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 82년생 김지영 2 (bookId:41)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 41,\n  \"userId\": 2,\n  \"writer\": \"booklover\",\n  \"content\": \"짧지만 묵직한 울림이 있는 소설. 한 번쯤 꼭 읽어야 할 작품.\",\n  \"rating\": 4,\n  \"createdAt\": \"2026-05-12\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 해변의 카프카 (bookId:43)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 43,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"하루키 소설 중 가장 좋아하는 작품. 신화와 현실이 뒤섞이는 방식이 정말 독특해요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-04-20\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 소년이 온다 (bookId:44)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 44,\n  \"userId\": 2,\n  \"writer\": \"readingroom\",\n  \"content\": \"눈물 없이는 못 읽을 작품입니다. 역사의 아픔이 문장 하나하나에 스며있어요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-03-15\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 모순 (bookId:45)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 45,\n  \"userId\": 3,\n  \"writer\": \"jiyeon\",\n  \"content\": \"중독성 있게 빠져드는 소설. 주인공 안나를 미워하다가 이해하게 되는 과정이 흥미로워요.\",\n  \"rating\": 4,\n  \"createdAt\": \"2026-04-02\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 오만과 편견 (bookId:46)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 46,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"200년 전 소설인데 지금 봐도 너무 재밌고 설레요. 다아시 캐릭터가 정말 매력적.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-02-14\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 나미야 잡화점의 기적 (bookId:50)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 50,\n  \"userId\": 2,\n  \"writer\": \"booklover\",\n  \"content\": \"따뜻하고 감동적인 이야기. 읽고 나서 오래도록 마음이 따뜻했어요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-05-01\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 나미야 잡화점의 기적 2 (bookId:50)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 50,\n  \"userId\": 3,\n  \"writer\": \"jiyeon\",\n  \"content\": \"히가시노 게이고 작품 중 가장 따뜻한 작품. 여러 인물들의 이야기가 하나로 연결될 때 감동이 폭발해요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-05-03\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 연금술사 (bookId:53)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 53,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"짧지만 깊은 메시지. 꿈을 포기하지 말라는 이야기가 삶의 어느 시점에서든 큰 울림을 줘요.\",\n  \"rating\": 4,\n  \"createdAt\": \"2026-01-20\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 언어의 온도 (bookId:59)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 59,\n  \"userId\": 2,\n  \"writer\": \"readingroom\",\n  \"content\": \"문장 하나하나가 시처럼 아름다워요. 지친 날 꺼내 읽고 싶은 책.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-04-10\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 당신이 옳다 (bookId:57)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 57,\n  \"userId\": 3,\n  \"writer\": \"jiyeon\",\n  \"content\": \"공감받는다는 게 뭔지 이 책을 읽고 처음 제대로 느꼈어요. 모든 사람이 읽었으면 해요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-03-22\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 호모 데우스 (bookId:70)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 70,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"사피엔스보다 더 충격적이었어요. AI 시대를 살아가는 현재에 더욱 와닿는 내용.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-05-18\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 페르마의 마지막 정리 (bookId:75)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 75,\n  \"userId\": 2,\n  \"writer\": \"booklover\",\n  \"content\": \"수학을 소설처럼 읽게 만드는 마법 같은 책. 수포자도 몰입해서 읽을 수 있어요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-04-28\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 생각에 관한 생각 (bookId:64)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 64,\n  \"userId\": 3,\n  \"writer\": \"jiyeon\",\n  \"content\": \"내가 왜 이런 선택을 했는지 이해하게 해주는 책. 두껍지만 읽을 가치가 있어요.\",\n  \"rating\": 4,\n  \"createdAt\": \"2026-03-08\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 해리 포터와 마법사의 돌 (bookId:90)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 90,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"어른이 돼서 다시 읽어도 설레고 즐거워요. 세계관이 정말 완벽한 소설.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-02-28\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 나의 라임오렌지나무 (bookId:89)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 89,\n  \"userId\": 2,\n  \"writer\": \"readingroom\",\n  \"content\": \"제제의 이야기는 읽을 때마다 울게 됩니다. 삶의 아름다움과 슬픔이 공존하는 책.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-01-30\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 미생 1 (bookId:97)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 97,\n  \"userId\": 3,\n  \"writer\": \"jiyeon\",\n  \"content\": \"직장인이라면 100% 공감. 장그래가 나 같아서 보는 내내 마음이 아팠어요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-05-05\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 슬램덩크 완전판 1 (bookId:98)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 98,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"만화 역사상 최고의 스포츠 만화. 강백호의 성장 서사는 읽을 때마다 가슴 뜨거워져요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-04-15\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 보건교사 안은영 (bookId:99)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 99,\n  \"userId\": 2,\n  \"writer\": \"booklover\",\n  \"content\": \"독창적인 세계관과 위트 있는 문체. 정세랑 작가 작품 중 가장 재밌게 읽었어요.\",\n  \"rating\": 4,\n  \"createdAt\": \"2026-05-08\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 팩트풀니스 (bookId:86)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 86,\n  \"userId\": 3,\n  \"writer\": \"jiyeon\",\n  \"content\": \"세상이 생각보다 나아지고 있다는 걸 데이터로 보여줘요. 뉴스만 보면 놓치는 사실들.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-03-29\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 로마인 이야기 1 (bookId:69)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 69,\n  \"userId\": 1,\n  \"writer\": \"yeonu\",\n  \"content\": \"역사가 이렇게 재밌을 수 있다니. 시오노 나나미의 필력이 로마를 살아있게 만들어요.\",\n  \"rating\": 5,\n  \"createdAt\": \"2026-02-10\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } },
+        { "name": "리뷰 — 피프티 피플 (bookId:100)", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"bookId\": 100,\n  \"userId\": 2,\n  \"writer\": \"readingroom\",\n  \"content\": \"정세랑 작가의 따뜻한 시선이 담긴 책. 50명 모두의 이야기가 하나하나 소중하게 느껴졌어요.\",\n  \"rating\": 4,\n  \"createdAt\": \"2026-05-14\"\n}", "options": { "raw": { "language": "json" } } }, "url": { "raw": "http://localhost:8080/reviews", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["reviews"] } } }
+      ]
+    }
+  ]
+}
