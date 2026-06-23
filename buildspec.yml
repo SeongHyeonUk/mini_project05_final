@@ -1,5 +1,13 @@
 version: 0.2
 
+# 프론트엔드(Vite)는 빌드 시점에 API 주소를 코드에 굽는다.
+# 운영 백엔드 주소를 CodeBuild 환경변수 VITE_API_BASE_URL 로 지정하면
+# 'npm run build' 결과에 반영된다. (CodeBuild 콘솔 환경변수 또는 Parameter Store 권장)
+# 예시(직접 지정 시 주석 해제):
+# env:
+#   variables:
+#     VITE_API_BASE_URL: "http://<EC2-퍼블릭-IP-또는-도메인>:8080"
+
 phases:
   install:
     runtime-versions:

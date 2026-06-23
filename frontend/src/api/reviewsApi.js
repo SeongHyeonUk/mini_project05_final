@@ -1,6 +1,7 @@
 import { apiFetch } from './apiClient';
+import { API_BASE_URL } from './config';
 
-const API_URL = 'http://localhost:8080/reviews';
+const API_URL = `${API_BASE_URL}/reviews`;
 
 export const getAllReviews = () =>
   apiFetch(API_URL, { errorMsg: '전체 리뷰를 불러오지 못했습니다.' });

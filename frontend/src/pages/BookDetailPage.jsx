@@ -6,6 +6,7 @@ import { getHighlightsByBookId, addHighlight, deleteHighlight } from '../api/hig
 import { useAuth } from '../context/AuthContext';
 import { useReadingGoal } from '../context/ReadingGoalContext';
 import { getMyBookshelves, assignBookToShelf } from '../api/bookshelfApi';
+import { API_BASE_URL } from '../api/config';
 import { DEFAULT_POSTER, STATUS_LABEL_TO_API, STATUS_API_TO_LABEL } from '../constants';
 import BookDetailSidePanel from '../components/BookDetailSidePanel';
 import BookDetailModals from '../components/BookDetailModals';
@@ -137,7 +138,7 @@ function BookDetailPage() {
     setAiGenerating(true);
     setAiPosters([]);
     try {
-      const res = await fetch('http://localhost:8080/ai/cover', {
+      const res = await fetch(`${API_BASE_URL}/ai/cover`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { updateBookCover } from '../api/booksApi';
+import { API_BASE_URL } from '../api/config';
 import '../styles/AiCoverGeneratePage.css';
 import { DEFAULT_POSTER } from '../constants';
 
@@ -55,7 +56,7 @@ function AiCoverGeneratePage() {
     setSelectedPoster('');
 
     try {
-      const res = await fetch('http://localhost:8080/ai/cover', {
+      const res = await fetch(`${API_BASE_URL}/ai/cover`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

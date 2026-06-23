@@ -29,7 +29,7 @@ public class User {
     private String nickname;
 
     @Lob
-    @Column(columnDefinition = "CLOB")
+    @Column(columnDefinition = "LONGTEXT")
     private String profileImage;
 
     @Column(length = 1000)

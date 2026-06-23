@@ -57,7 +57,7 @@
 ### Backend
 - **Java 17**, **Spring Boot 4.0.6**
 - Spring Data JPA, Spring Validation, Spring Web MVC
-- **H2 Database** (파일 기반)
+- **MySQL** (mysql-connector-j)
 - Lombok, Spring Security Crypto (비밀번호 암호화)
 - Gradle
 
@@ -106,15 +106,35 @@ bookapp/
 ### 사전 요구사항
 - JDK 17+
 - Node.js 18+
+- **MySQL 8.x** (포트 3306 실행 중)
 
-### 1. 백엔드 실행
+### 1. 데이터베이스 준비 (MySQL)
+- MySQL 서버를 **포트 3306**에서 실행합니다.
+- 기본 접속값: host `localhost`, user `root`, DB명 `bookapp`.
+  접속 URL에 `createDatabaseIfNotExist=true`가 있어 **`bookapp` DB는 없으면 자동 생성**됩니다.
+- 접속 정보가 다르면 환경변수로 덮어쓸 수 있습니다:
+  `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USERNAME`, `DB_PASSWORD`
+  ```bash
+  # 예: 비밀번호가 있는 경우
+  set DB_PASSWORD=yourpassword   # Windows
+  export DB_PASSWORD=yourpassword # macOS/Linux
+  ```
+
+### 2. 백엔드 실행
 ```bash
 cd bookapp
 ./gradlew bootRun        # Windows: gradlew.bat bootRun
 ```
 - 서버: `http://localhost:8080`
-- H2 콘솔: `http://localhost:8080/h2-console`
-  - JDBC URL: `jdbc:h2:file:./bookapp-data`, 사용자: `sa`, 비밀번호: (없음)
+- `ddl-auto: update` 설정으로 **엔티티 기준 테이블이 자동 생성**되고 데이터가 영속됩니다.
+
+### (선택) 기존 데이터 가져오기
+처음 실행해 테이블이 생성된 뒤, 예전 H2 데이터를 한 번만 import 하면 됩니다.
+```bash
+mysql -u root -p bookapp < bookapp/db/mysql-seed.sql
+```
+> `bookapp/db/mysql-seed.sql`은 기존 H2 DB에서 추출한 시드(책·유저·리뷰·피드 등)입니다.
+> **최초 1회만** 실행하세요(재실행 시 PK 중복). import 후에는 삭제해도 됩니다.
 
 ### 2. 프론트엔드 실행
 ```bash
@@ -123,8 +143,41 @@ npm install
 npm run dev
 ```
 - 개발 서버: `http://localhost:5173`
+- API 주소는 `VITE_API_BASE_URL` 환경변수로 지정(미설정 시 `http://localhost:8080`).
 
 > 백엔드가 `localhost:5173`, `5174`, `3000` Origin에 대해 CORS를 허용하도록 설정되어 있습니다.
+
+---
+
+## ☁️ AWS 배포 (CI/CD)
+
+CodeBuild(`buildspec.yml`) → CodeDeploy(`appspec.yml`, `deploy-scripts/`) 파이프라인이 구성돼 있습니다.
+
+**DB 접속 (RDS)** — 코드/yml에 비밀번호를 넣지 않고 EC2의 env 파일로 주입합니다.
+```bash
+sudo mkdir -p /etc/chaekdam
+sudo tee /etc/chaekdam/db.env >/dev/null <<'EOF'
+DB_HOST=<RDS 엔드포인트>
+DB_PORT=3306
+DB_NAME=bookapp
+DB_USERNAME=admin
+DB_PASSWORD=********
+CORS_ALLOWED_ORIGINS=http://<프론트-도메인-또는-IP>
+EOF
+sudo chmod 600 /etc/chaekdam/db.env
+```
+배포 시 `application-start-hook.sh`가 이 파일을 읽어 앱에 환경변수로 전달합니다.
+(파일이 없으면 `application.yaml` 기본값 `localhost:3306` / CORS는 localhost로 동작)
+
+**CORS** — 운영 프론트 주소에서 API를 호출하려면 위 `CORS_ALLOWED_ORIGINS`에
+프론트 도메인/IP를 지정합니다(콤마로 여러 개 가능, `http://13.124.*.*` 같은 패턴 허용).
+
+**프론트 API 주소** — 빌드 시점에 굽히므로 CodeBuild 환경변수 `VITE_API_BASE_URL`에
+운영 백엔드 주소(예: `http://<EC2-IP>:8080`)를 지정합니다. (`buildspec.yml` 상단 주석 참고)
+
+**체크리스트**
+- RDS 보안그룹에서 EC2 → 3306 인바운드 허용
+- 최초 1회 시드 import: `mysql -h <RDS> -u admin -p bookapp < bookapp/db/mysql-seed.sql`
 
 ---
 

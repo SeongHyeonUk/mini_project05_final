@@ -37,7 +37,7 @@ public class Book {
     private String genre;
 
     @Lob
-    @Column(columnDefinition = "CLOB")
+    @Column(columnDefinition = "LONGTEXT")
     private String poster;
 
     private String publisher;

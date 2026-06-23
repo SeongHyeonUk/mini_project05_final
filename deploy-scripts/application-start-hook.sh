@@ -28,6 +28,27 @@ if [[ -z "${JAR_FILE}" ]]; then
   exit 1
 fi
 
+# DB(RDS 등) 접속 정보 주입.
+# 비밀번호를 git에 올리지 않도록 EC2에만 두는 env 파일을 읽는다.
+#   sudo mkdir -p /etc/chaekdam
+#   sudo tee /etc/chaekdam/db.env >/dev/null <<'EOF'
+#   DB_HOST=chaekdam.xxxx.ap-northeast-2.rds.amazonaws.com
+#   DB_PORT=3306
+#   DB_NAME=bookapp
+#   DB_USERNAME=admin
+#   DB_PASSWORD=********
+#   CORS_ALLOWED_ORIGINS=http://<프론트-도메인-또는-IP>
+#   EOF
+#   sudo chmod 600 /etc/chaekdam/db.env
+# 파일이 없으면 application.yaml 기본값(localhost)으로 동작한다.
+ENV_FILE="/etc/chaekdam/db.env"
+if [[ -f "${ENV_FILE}" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "${ENV_FILE}"
+  set +a
+fi
+
 cd "${APP_DIR}"
 nohup java -jar "${JAR_FILE}" >"${LOG_FILE}" 2>&1 &
 NEW_PID=$!

@@ -1,6 +1,7 @@
 import { apiFetch } from './apiClient';
+import { API_BASE_URL } from './config';
 
-const BASE = 'http://localhost:8080/feeds';
+const BASE = `${API_BASE_URL}/feeds`;
 
 export const getFollowingFeed = (userId) =>
   apiFetch(`${BASE}/following?userId=${userId}`, { errorMsg: '피드 조회에 실패했습니다.' });
