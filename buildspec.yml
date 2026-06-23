@@ -9,6 +9,7 @@ phases:
   pre_build:
     commands:
       - chmod +x bookapp/gradlew
+      - chmod +x deploy-scripts/*.sh
       - npm ci --prefix frontend
 
   build:
@@ -19,6 +20,7 @@ phases:
   post_build:
     commands:
       - test -f appspec.yml
+      - test -x deploy-scripts/application-start-hook.sh
       - test -d frontend/dist
       - test -n "$(find bookapp/build/libs -name '*.jar' -print -quit)"
 
