@@ -1,6 +1,7 @@
 import { apiFetch } from './apiClient';
+import { API_BASE_URL } from './config';
 
-const API_URL = 'http://localhost:8080/highlights';
+const API_URL = `${API_BASE_URL}/highlights`;
 
 export const getHighlightsByBookId = (bookId) =>
   apiFetch(`${API_URL}?bookId=${bookId}`, { errorMsg: '하이라이트 목록을 불러오지 못했습니다.' });
