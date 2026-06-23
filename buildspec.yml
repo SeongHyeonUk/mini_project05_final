@@ -10,19 +10,22 @@ phases:
     commands:
       - chmod +x bookapp/gradlew
       - npm ci --prefix frontend
-  
+
   build:
     commands:
-      - ./bookapp/gradlew -p bookapp clean build --no-daemon
+      - ./bookapp/gradlew -p bookapp clean bootJar --no-daemon
       - npm run build --prefix frontend
 
   post_build:
     commands:
-      - ls -la bookapp/build/libs
-      - ls -la frontend/dist
+      - test -f appspec.yml
+      - test -d frontend/dist
+      - test -n "$(find bookapp/build/libs -name '*.jar' -print -quit)"
 
 artifacts:
   files:
+    - appspec.yml
+    - deploy-scripts/**/*
     - bookapp/build/libs/*.jar
     - frontend/dist/**/*
   discard-paths: no
