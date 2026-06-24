@@ -1,64 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_DIR="/opt/chaekdam"
-PID_FILE="${APP_DIR}/chaekdam.pid"
-LOG_DIR="/var/log/chaekdam"
-LOG_FILE="${LOG_DIR}/application.log"
+# 앱은 systemd 유닛(chaekdam.service)이 단일 프로세스로 관리한다.
+#   - ExecStart: java -jar /opt/chaekdam/bookapp-0.0.1-SNAPSHOT.jar
+#   - EnvironmentFile: /opt/chaekdam/db.env  (DB 접속정보 + CORS_ALLOWED_ORIGINS)
+#   - Restart=always
+# 따라서 배포 훅은 직접 java를 띄우지 않고 systemd 재시작만 호출한다.
+# (과거에 nohup java 로 직접 띄우다가 systemd 프로세스와 8080 포트 충돌이 발생했음)
 
-mkdir -p "${APP_DIR}" "${LOG_DIR}"
+SERVICE="chaekdam"
 
-if [[ -f "${PID_FILE}" ]]; then
-  OLD_PID="$(cat "${PID_FILE}")"
-  if kill -0 "${OLD_PID}" 2>/dev/null; then
-    kill "${OLD_PID}"
-    for _ in {1..30}; do
-      if ! kill -0 "${OLD_PID}" 2>/dev/null; then
-        break
-      fi
-      sleep 1
-    done
+# 유닛 파일이 변경되었을 수 있으니 reload 후 재시작.
+systemctl daemon-reload
+systemctl restart "${SERVICE}"
+
+# 기동 헬스 체크: 최대 60초 동안 8080 응답을 기다린다.
+# 루트(/)가 404여도 "응답이 온다"는 것은 서버가 떴다는 뜻이므로 -f 는 쓰지 않는다.
+for _ in {1..30}; do
+  if curl -sS -o /dev/null "http://localhost:8080/" 2>/dev/null; then
+    echo "${SERVICE} is up on port 8080."
+    exit 0
   fi
-  rm -f "${PID_FILE}"
-fi
+  sleep 2
+done
 
-JAR_FILE="$(find "${APP_DIR}" -maxdepth 1 -type f -name '*.jar' ! -name '*-plain.jar' -print -quit)"
-if [[ -z "${JAR_FILE}" ]]; then
-  echo "Spring Boot JAR not found in ${APP_DIR}" >&2
-  exit 1
-fi
-
-# DB(RDS 등) 접속 정보 주입.
-# 비밀번호를 git에 올리지 않도록 EC2에만 두는 env 파일을 읽는다.
-#   sudo mkdir -p /etc/chaekdam
-#   sudo tee /etc/chaekdam/db.env >/dev/null <<'EOF'
-#   DB_HOST=chaekdam.xxxx.ap-northeast-2.rds.amazonaws.com
-#   DB_PORT=3306
-#   DB_NAME=bookapp
-#   DB_USERNAME=admin
-#   DB_PASSWORD=********
-#   CORS_ALLOWED_ORIGINS=http://<프론트-도메인-또는-IP>
-#   EOF
-#   sudo chmod 600 /etc/chaekdam/db.env
-# 파일이 없으면 application.yaml 기본값(localhost)으로 동작한다.
-ENV_FILE="/etc/chaekdam/db.env"
-if [[ -f "${ENV_FILE}" ]]; then
-  set -a
-  # shellcheck disable=SC1090
-  source "${ENV_FILE}"
-  set +a
-fi
-
-cd "${APP_DIR}"
-nohup java -jar "${JAR_FILE}" >"${LOG_FILE}" 2>&1 &
-NEW_PID=$!
-echo "${NEW_PID}" >"${PID_FILE}"
-
-sleep 5
-if ! kill -0 "${NEW_PID}" 2>/dev/null; then
-  echo "Application failed to start. Recent log output:" >&2
-  tail -n 100 "${LOG_FILE}" >&2 || true
-  exit 1
-fi
-
-echo "Chaekdam started with PID ${NEW_PID}"
+echo "${SERVICE} failed to become healthy within 60s. Recent logs:" >&2
+journalctl -u "${SERVICE}" -n 50 --no-pager >&2 || true
+exit 1
